@@ -1,36 +1,5 @@
- /*const personForm = document.querySelector('form')
 
- personForm.onsubmit = (ev) => {
-   ev.preventDefault()
-   const form = ev.target
-   const details = document.querySelector('.details')
-  
-  const personName = form.personName.value
-  const em = document.createElement('p')
-  em.textContent = personName
-  details.appendChild(em)
-    
-   const hairColor = form.hairColor.value
-   const colorDiv = document.createElement('div')
-   colorDiv.style.backgroundColor = hairColor
-   colorDiv.style.height = '50px'
-   colorDiv.style.width = '100px'
-   details.appendChild(colorDiv)
-
-   const age = form.age.value
-   const ag = document.createElement('p')
-   ag.textContent = age
-   details.appendChild(ag)
-
-   const birthplace = form.birthplace.value
-   const bp = document.createElement('p')
-   bp.textContent = birthplace 
-   details.appendChild(bp)
-
-    
-}*/
-  
-  const personForm = document.querySelector('form')
+const personForm = document.querySelector('form')
 
 const renderColor = (hairColor) => {
   const colorDiv = document.createElement('div')
@@ -38,6 +7,18 @@ const renderColor = (hairColor) => {
   colorDiv.style.height = '50px'
   colorDiv.style.width = '100px'
   return colorDiv
+}
+
+const names = (text) => {
+  const name = document.createElement('li')
+  name.textContent = text
+  return name
+}
+
+const ages = (text1) => {
+  const age = document.createElement('li')
+  age.textContent = text1
+  return age
 }
 
 const handleSubmit = (ev) => {
@@ -53,17 +34,13 @@ const colorDiv = renderColor(hairColor)
 
 const list = document.createElement('ul')
 
-const name = document.createElement('li')
-name.textContent = personName
-list.appendChild(name)
+list.appendChild(names(personName))
 
 const hair = document.createElement('li')
 hair.appendChild(colorDiv)
 list.appendChild(hair)
 
-const agex = document.createElement('li')
-agex.textContent = age
-list.appendChild(agex)
+list.appendChild(ages(age))
 
 const bp = document.createElement('li')
 bp.textContent = birthplace
