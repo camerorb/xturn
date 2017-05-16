@@ -45,10 +45,10 @@ ev.preventDefault()
 const form = ev.target
 const details = document.querySelector('.details')
 
-const personName = form.personName.value
+const personName = "Name: " + form.personName.value 
 const hairColor = form.hairColor.value
-const age = form.age.value
-const birthplace = form.birthplace.value
+const age = "Age: " + form.age.value
+const birthplace = "Birthplace: " + form.birthplace.value
 const colorDiv = renderColor(hairColor)
 
 const list = document.createElement('ul')
